@@ -15,7 +15,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 
-camera.position.z = 5;
+camera.position.z = 25;
 
 const light = new THREE.AmbientLight(0xe8e8ff);
 scene.add(light);
