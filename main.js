@@ -51,9 +51,9 @@ function animate(time) {
 }
 animate();
 
-let xSpeed = 0.2;
-let ySpeed = 0.2;
-let zSpeed = 0.2;
+let xSpeed = 1;
+let ySpeed = 1;
+let zSpeed = 1;
 
 document.addEventListener("keydown", onDocumentKeyDown, false)
 
