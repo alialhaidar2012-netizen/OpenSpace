@@ -72,6 +72,6 @@ function onDocumentKeyDown(event) {
   }else if(keyCode == 40){
     ship.position.y -= ySpeed;
   }else if(keyCode == 32){
-    robot.position.set(0,0,0);
+    ship.position.set(0,0,0);
   }
 };
