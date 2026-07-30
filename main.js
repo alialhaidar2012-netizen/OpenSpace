@@ -10,6 +10,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 const clock = new THREE.Clock();
 let mixer;
 let ship;
+let delta;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
@@ -43,7 +44,7 @@ scene.background = textures;
 
 function animate(time) {
   requestAnimationFrame(animate);
-  let delta = clock.getDelta();
+  delta = clock.getDelta();
   if(mixer){
     mixer.update(delta);
   }
@@ -51,27 +52,28 @@ function animate(time) {
 }
 animate();
 
-let xSpeed = 1;
-let ySpeed = 1;
-let zSpeed = 1;
+let xSpeed = 0.2;
+let ySpeed = 0.2;
+let zSpeed = 0.2;
 
 document.addEventListener("keydown", onDocumentKeyDown, false)
 
 function onDocumentKeyDown(event) {
+  if (!ship) return;
   let keyCode = event.which;
-  if(keyCode == 87){
+  if (keyCode == 87) {
     ship.position.z += ySpeed;
-  }else if(keyCode == 83){
+  } else if (keyCode == 83) {
     ship.position.z -= ySpeed;
-  }else if(keyCode == 65){
+  } else if (keyCode == 65) {
     ship.position.x -= xSpeed;
-  }else if(keyCode == 68){
+  } else if (keyCode == 68) {
     ship.position.x += xSpeed;
-  }else if(keyCode == 38){
-    ship.position.y -= ySpeed;
-  }else if(keyCode == 40){
+  } else if (keyCode == 40) {
     ship.position.y += ySpeed;
-  }else if(keyCode == 32){
-    ship.position.set(0,0,0);
+  } else if (keyCode == 38) {
+    ship.position.y -= ySpeed;
+  } else if (keyCode == 32) {
+    ship.position.set(0, 0, 0);
   }
-};
+}
