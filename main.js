@@ -68,9 +68,9 @@ function onDocumentKeyDown(event) {
   }else if(keyCode == 68){
     ship.position.x += xSpeed;
   }else if(keyCode == 38){
-    ship.position.y += ySpeed;
-  }else if(keyCode == 40){
     ship.position.y -= ySpeed;
+  }else if(keyCode == 40){
+    ship.position.y += ySpeed;
   }else if(keyCode == 32){
     ship.position.set(0,0,0);
   }
